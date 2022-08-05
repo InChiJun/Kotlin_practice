@@ -62,7 +62,7 @@ object Game {
 
         fun processCommand() = when (command.toLowerCase()) {
             "move" -> move(argument)
-            "map" -> viewMap()
+            "ring" -> currentRoom.ringBell()
             else -> commandNotFound()
         }
 
@@ -84,11 +84,4 @@ object Game {
         } catch (e: Exception) {
             "잘못된 방향임: $directionInput."
         }
-
-    private fun viewMap() {
-        for (i in worldMap) {
-            if (i == currentRoom) print("O ")
-            else print("X")
-        }
-    }
 }
