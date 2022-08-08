@@ -1,0 +1,1 @@
+class LootBox<T>
